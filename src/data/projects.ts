@@ -284,36 +284,6 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: "portfolio-web",
-    title: "Portfolio Personal",
-    subtitle: "Proyecto propio",
-    description:
-      "Portfolio web desarrollado con React, TypeScript y animaciones fluidas.",
-    titleEn: "Personal Portfolio",
-    subtitleEn: "Personal project",
-    descriptionEn:
-      "Web portfolio built with React, TypeScript and smooth animations.",
-    image: "https://placehold.co/800x500/222023/bc96e6?text=Portfolio",
-    images: [
-      "https://placehold.co/800x500/222023/bc96e6?text=Portfolio",
-      "https://placehold.co/800x500/222023/FFD166?text=Detail",
-    ],
-    tags: ["React", "TypeScript", "Framer Motion", "CSS Modules"],
-    featured: false,
-    type: "personal",
-    sections: [
-      {
-        id: "overview",
-        title: "Visión general",
-        content:
-          "Portfolio personal con diseño de estilo carpeta Windows, dividido en secciones de inicio, sobre mí y proyectos con carrusel de imágenes.",
-        titleEn: "Overview",
-        contentEn:
-          "Personal portfolio with Windows folder-style design, divided into home, about me and projects sections with image carousel.",
-      },
-    ],
-  },
-  {
     id: "reading-tracker",
     title: "Reading Tracker",
     subtitle: "Seguimiento de lectura",
@@ -421,44 +391,5 @@ export const projects: Project[] = [
       "contentEn": "Integration of multiple libraries (FullCalendar, Chart.js, SweetAlert2) in a Vue 3 project. Design of automatic talk selection algorithm with equity prioritization. Authentication management with cookies and three differentiated roles. Communication with .NET REST API from Vue frontend. Responsive design with Bootstrap 5 and complex state management without global store."
     }
   ]
-},
-  {
-    id: "task-tracker",
-    title: "Task Tracker",
-    subtitle: "Gestión de tareas de trabajo",
-    description:
-      "App de escritorio para el seguimiento diario de tareas, reuniones y otros elementos de trabajo.",
-    titleEn: "Task Tracker",
-    subtitleEn: "Work task management",
-    descriptionEn:
-      "Desktop app for daily tracking of tasks, meetings and other work items.",
-    image: "https://placehold.co/800x500/222023/bc96e6?text=Task+Tracker",
-    images: [
-      "https://placehold.co/800x500/222023/bc96e6?text=Task+Tracker",
-      "https://placehold.co/800x500/222023/FFD166?text=Dashboard",
-    ],
-    tags: [".NET", "WPF", "SQLite"],
-    featured: false,
-    type: "personal",
-    sections: [
-      {
-        id: "overview",
-        title: "Visión general",
-        content:
-          "Aplicación de escritorio diseñada para organizar y dar seguimiento al día a día laboral: tareas pendientes, reuniones, recordatorios y otros elementos relevantes.",
-        titleEn: "Overview",
-        contentEn:
-          "Desktop application designed to organize and track daily work: pending tasks, meetings, reminders and other relevant items.",
-      },
-      {
-        id: "features",
-        title: "Funcionalidades",
-        content:
-          "Gestión de tareas con estados y prioridades. Calendarización de reuniones. Recordatorios y notificaciones. Vista diaria/semanal. Almacenamiento local con SQLite.",
-        titleEn: "Features",
-        contentEn:
-          "Task management with statuses and priorities. Meeting scheduling. Reminders and notifications. Daily/weekly view. Local storage with SQLite.",
-      },
-    ],
-  },
+}
 ];

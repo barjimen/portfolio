@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   FiChevronLeft,
@@ -122,69 +123,72 @@ export const ImageCarousel = ({ images, alt }: ImageCarouselProps) => {
         )}
       </div>
 
-      <AnimatePresence>
-        {lightboxOpen && (
-          <motion.div
-            className={styles.lightbox}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            onClick={() => setLightboxOpen(false)}
-          >
-            <button
-              className={styles.lightboxClose}
-              onClick={() => setLightboxOpen(false)}
-              aria-label="Cerrar"
-            >
-              <FiX size={20} />
-            </button>
-
-            {images.length > 1 && (
-              <>
-                <button
-                  className={`${styles.lightboxNav} ${styles.lightboxPrev}`}
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    lightboxPrev();
-                  }}
-                  aria-label="Anterior"
-                >
-                  <FiChevronLeft size={24} />
-                </button>
-                <button
-                  className={`${styles.lightboxNav} ${styles.lightboxNext}`}
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    lightboxNext();
-                  }}
-                  aria-label="Siguiente"
-                >
-                  <FiChevronRight size={24} />
-                </button>
-              </>
-            )}
-
-            <motion.img
-              key={lightboxIndex}
-              src={images[lightboxIndex]}
-              alt={`${alt} ${lightboxIndex + 1}`}
-              className={styles.lightboxImage}
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.95 }}
+      {createPortal(
+        <AnimatePresence>
+          {lightboxOpen && (
+            <motion.div
+              className={styles.lightbox}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
-              onClick={(e) => e.stopPropagation()}
-            />
+              onClick={() => setLightboxOpen(false)}
+            >
+              <button
+                className={styles.lightboxClose}
+                onClick={() => setLightboxOpen(false)}
+                aria-label="Cerrar"
+              >
+                <FiX size={20} />
+              </button>
 
-            {images.length > 1 && (
-              <span className={styles.lightboxCounter}>
-                {lightboxIndex + 1} / {images.length}
-              </span>
-            )}
-          </motion.div>
-        )}
-      </AnimatePresence>
+              {images.length > 1 && (
+                <>
+                  <button
+                    className={`${styles.lightboxNav} ${styles.lightboxPrev}`}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      lightboxPrev();
+                    }}
+                    aria-label="Anterior"
+                  >
+                    <FiChevronLeft size={24} />
+                  </button>
+                  <button
+                    className={`${styles.lightboxNav} ${styles.lightboxNext}`}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      lightboxNext();
+                    }}
+                    aria-label="Siguiente"
+                  >
+                    <FiChevronRight size={24} />
+                  </button>
+                </>
+              )}
+
+              <motion.img
+                key={lightboxIndex}
+                src={images[lightboxIndex]}
+                alt={`${alt} ${lightboxIndex + 1}`}
+                className={styles.lightboxImage}
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.2 }}
+                onClick={(e) => e.stopPropagation()}
+              />
+
+              {images.length > 1 && (
+                <span className={styles.lightboxCounter}>
+                  {lightboxIndex + 1} / {images.length}
+                </span>
+              )}
+            </motion.div>
+          )}
+        </AnimatePresence>,
+        document.body
+      )}
     </>
   );
 };
