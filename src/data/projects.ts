@@ -251,7 +251,7 @@ export const projects: Project[] = [
       "./projects/paws&notes/custom2.png",
     ],
     tags: [".NET 9", "WPF", "Blazor Hybrid", "Notion API"],
-    featured: false,
+    featured: true,
     type: "personal",
     sections: [
       {
@@ -330,7 +330,7 @@ export const projects: Project[] = [
       "https://placehold.co/800x500/222023/BC96E6?text=Reviews",
     ],
     tags: [".NET", "Azure", "SQL"],
-    featured: true,
+    featured: false,
     type: "personal",
     sections: [
       {
@@ -363,44 +363,65 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: "talk-manager",
-    title: "Gestor de Charlas",
-    subtitle: "Votación en entornos estudiantiles",
-    description:
-      "App para proponer y votar temas de charla en el ámbito universitario.",
-    titleEn: "Talk Manager",
-    subtitleEn: "Voting in student environments",
-    descriptionEn:
-      "App for proposing and voting on talk topics in university settings.",
-    image: "https://placehold.co/800x500/222023/FFD166?text=Talk+Manager",
-    images: [
-      "https://placehold.co/800x500/222023/FFD166?text=Talk+Manager",
-      "https://placehold.co/800x500/222023/BC96E6?text=Votaciones",
-    ],
-    tags: ["Vue.js", ".NET", "Real-time"],
-    featured: false,
-    type: "personal",
-    sections: [
-      {
-        id: "overview",
-        title: "Visión general",
-        content:
-          "Aplicación pensada para entornos estudiantiles donde los alumnos proponen temas de charla y la clase vota cuáles les interesan más. Fomenta la participación y la elección democrática de contenidos.",
-        titleEn: "Overview",
-        contentEn:
-          "Application designed for student environments where students propose talk topics and the class votes on which ones interest them most. Encourages participation and democratic content selection.",
-      },
-      {
-        id: "features",
-        title: "Funcionalidades",
-        content:
-          "Propuesta de temas por parte de los alumnos. Sistema de votación en tiempo real. Ranking de temas más votados. Notificaciones de resultados. Panel de administración para el profesor.",
-        titleEn: "Features",
-        contentEn:
-          "Student topic proposals. Real-time voting system. Most voted topics ranking. Results notifications. Admin panel for the teacher.",
-      },
-    ],
-  },
+  "id": "talk-manager",
+  "title": "TechTalks Tajamar",
+  "subtitle": "Votación de charlas en entornos educativos",
+  "description": "App para proponer y votar temas de exposiciones en el ámbito educativo, sobretodo tecnológico. Los alumnos proponen charlas en rondas definidas por el profesor, la clase vota y el sistema selecciona automáticamente las más votadas.",
+  "titleEn": "TechTalks Tajamar",
+  "subtitleEn": "Voting in student environments",
+  "descriptionEn": "App for proposing and voting on talk topics in educational settings, mostly tech-related. Students propose talks in rounds defined by the teacher, the class votes and the system automatically selects the most voted ones.",
+  "image": "./projects/charlasTajamar/Login.png",
+  "images": [
+    "./projects/charlasTajamar/Login.png"
+  ],
+  "tags": ["Vue.js", ".NET", "Bootstrap", "Chart.js", "FullCalendar", "SweetAlert2"],
+  "featured": false,
+  "type": "personal",
+  "sections": [
+    {
+      "id": "overview",
+      "title": "Visión general",
+      "content": "Aplicación pensada para entornos estudiantiles donde los alumnos proponen temas de charla en rondas definidas por el profesor. La clase vota cuáles les interesan más y un algoritmo automático selecciona las charlas aceptadas priorizando equidad de participación. Incluye gestión de cursos, usuarios y un panel de estadísticas.",
+      "titleEn": "Overview",
+      "contentEn": "Application designed for student environments where students propose talk topics in rounds defined by the teacher. The class votes on which ones interest them most and an automatic algorithm selects the accepted talks prioritizing participation equity. Includes course management, user management and a statistics panel."
+    },
+    {
+      "id": "features",
+      "title": "Funcionalidades",
+      "content": "Sistema de rondas con fechas de cierre, límite de votación y fecha de presentación. Propuesta de charlas por alumnos con título, descripción, duración y recursos adjuntos. Sistema de votación: un voto por alumno por ronda, selección automática de charlas aceptadas. Algoritmo de selección que prioriza alumnos sin charlas aceptadas y respeta la duración máxima de la ronda. Calendario interactivo con eventos codificados por color. Gráficas estadísticas: distribución de charlas por ronda y charlas propuestas/aceptadas por alumno. Gestión de cursos por el profesor. Gestión de usuarios por administrador. Sistema de comentarios y recursos en charlas. Edición de perfil, cambio de contraseña y subida de imagen de perfil. Notificaciones de charlas aceptadas. Diseño responsive para móvil y escritorio. Tres roles diferenciados: Alumno, Profesor y Administrador.",
+      "titleEn": "Features",
+      "contentEn": "Round system with close dates, voting deadline and presentation date. Talk proposals by students with title, description, duration and attached resources. Voting system: one vote per student per round, automatic selection of accepted talks. Selection algorithm that prioritizes students with no accepted talks and respects maximum round duration. Interactive calendar with color-coded events. Statistics charts: talk distribution per round and proposed/accepted talks per student. Course management by teacher. User management by administrator. Comment and resource system on talks. Profile editing, password change and profile image upload. Accepted talks notifications. Responsive design for mobile and desktop. Three differentiated roles: Student, Teacher and Administrator."
+    },
+    {
+      "id": "architecture",
+      "title": "Arquitectura",
+      "content": "Frontend SPA construido con Vue 3 y Vue Router en modo history. Comunicación con backend .NET alojado en Azure mediante axios y autenticación JWT Bearer almacenada en cookies con expiración de 4 horas. Gestión de estado local en componentes sin librería externa (sin Vuex/Pinia). Los menús de navegación se renderizan dinámicamente según el rol del usuario.",
+      "titleEn": "Architecture",
+      "contentEn": "SPA frontend built with Vue 3 and Vue Router in history mode. Communication with .NET backend hosted on Azure via axios and JWT Bearer authentication stored in cookies with 4-hour expiration. Local state management in components without external library (no Vuex/Pinia). Navigation menus are rendered dynamically based on the user's role."
+    },
+    {
+      "id": "roles",
+      "title": "Roles de usuario",
+      "content": "Alumno: propone charlas, vota, comenta, gestiona su perfil. Profesor: crea rondas, actualiza estados con algoritmo automático, gestiona cursos y alumnos, visualiza estadísticas. Administrador: gestiona todos los usuarios (cambiar curso, rol y estado).",
+      "titleEn": "User roles",
+      "contentEn": "Student: proposes talks, votes, comments, manages their profile. Teacher: creates rounds, updates statuses with automatic algorithm, manages courses and students, views statistics. Administrator: manages all users (change course, role and status)."
+    },
+    {
+      "id": "backend",
+      "title": "Endpoints API",
+      "content": "Autenticación: login, registro de alumnos y profesores. Charlas: CRUD completo con estados (PROPUESTA, ACEPTADA, RECHAZADA). Rondas: creación, edición, eliminación por profesor. Votos: registro y consulta por ronda y alumno. Comentarios: creación y eliminación. Recursos: creación y edición. Cursos: creación, activación/desactivación, eliminación. Usuarios: gestión completa por admin con filtros por rol, curso y estado.",
+      "titleEn": "API Endpoints",
+      "contentEn": "Authentication: login, student and teacher registration. Talks: full CRUD with statuses (PROPOSED, ACCEPTED, REJECTED). Rounds: creation, editing, deletion by teacher. Votes: registration and query by round and student. Comments: creation and deletion. Resources: creation and editing. Courses: creation, activation/deactivation, deletion. Users: full management by admin with filters by role, course and status."
+    },
+    {
+      "id": "challenges",
+      "title": "Retos y aprendizajes",
+      "content": "Integración de múltiples librerías (FullCalendar, Chart.js, SweetAlert2) en un proyecto Vue 3. Diseño de algoritmo de selección automática de charlas con priorización por equidad. Gestión de autenticación con cookies y tres roles diferenciados. Comunicación con API REST .NET desde frontend Vue. Diseño responsive con Bootstrap 5 y manejo de estados complejos sin store global.",
+      "titleEn": "Challenges and learnings",
+      "contentEn": "Integration of multiple libraries (FullCalendar, Chart.js, SweetAlert2) in a Vue 3 project. Design of automatic talk selection algorithm with equity prioritization. Authentication management with cookies and three differentiated roles. Communication with .NET REST API from Vue frontend. Responsive design with Bootstrap 5 and complex state management without global store."
+    }
+  ]
+},
   {
     id: "task-tracker",
     title: "Task Tracker",
