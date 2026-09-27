@@ -17,7 +17,8 @@ const skillCategories = [
 ];
 
 export const About = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const isEn = i18n.language === "en";
   const [activeTab, setActiveTab] = useState<Tab>("experience");
   const { experience, education, certifications } = portfolioData;
 
@@ -65,32 +66,38 @@ export const About = () => {
         >
           {activeTab === "experience" && (
             <div className={styles.timeline}>
-              {experience.map((exp, i) => (
-                <motion.div
-                  key={exp.company}
-                  className={styles.timelineItem}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.1 }}
-                >
-                  <div className={styles.timelineDot} />
-                  <div className={styles.timelineCard}>
-                    <div className={styles.timelineHeader}>
-                      <div>
-                        <h3 className={styles.timelineRole}>{exp.role}</h3>
-                        <p className={styles.timelineCompany}>{exp.company}</p>
+              {experience.map((exp, i) => {
+                const role = isEn && exp.roleEn ? exp.roleEn : exp.role;
+                const period = isEn && exp.periodEn ? exp.periodEn : exp.period;
+                const location = isEn && exp.locationEn ? exp.locationEn : exp.location;
+                const highlights = isEn && exp.highlightsEn ? exp.highlightsEn : exp.highlights;
+                return (
+                  <motion.div
+                    key={exp.company}
+                    className={styles.timelineItem}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: i * 0.1 }}
+                  >
+                    <div className={styles.timelineDot} />
+                    <div className={styles.timelineCard}>
+                      <div className={styles.timelineHeader}>
+                        <div>
+                          <h3 className={styles.timelineRole}>{role}</h3>
+                          <p className={styles.timelineCompany}>{exp.company}</p>
+                        </div>
+                        <span className={styles.timelinePeriod}>{period}</span>
                       </div>
-                      <span className={styles.timelinePeriod}>{exp.period}</span>
+                      <p className={styles.timelineLocation}>{location}</p>
+                      <ul className={styles.timelineList}>
+                        {highlights.map((h, j) => (
+                          <li key={j} className={styles.timelineListItem}>{h}</li>
+                        ))}
+                      </ul>
                     </div>
-                    <p className={styles.timelineLocation}>{exp.location}</p>
-                    <ul className={styles.timelineList}>
-                      {exp.highlights.map((h, j) => (
-                        <li key={j} className={styles.timelineListItem}>{h}</li>
-                      ))}
-                    </ul>
-                  </div>
-                </motion.div>
-              ))}
+                  </motion.div>
+                );
+              })}
             </div>
           )}
 

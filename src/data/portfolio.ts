@@ -16,14 +16,26 @@ export const portfolioData = {
       role: "Full Stack Developer (Mid)",
       period: "2025 - Actualidad",
       location: "Madrid, España",
+      roleEn: "Full Stack Developer (Mid)",
+      periodEn: "2025 - Present",
+      locationEn: "Madrid, Spain",
       highlights: [
-      "Desarrollo de plataformas web escalables para la gestión de campeonatos, resultados en tiempo real y diferido y servicios automatizados para clientes de primer nivel del sector deportivo.",
-      "Liderazgo técnico y ownership end-to-end: Responsable de la definición técnica, arquitectura, desarrollo y evolución de plataformas bajo metodología Scrum, actuando como principal referente técnico del proyecto.",
-      "Mentoría y liderazgo de equipo: Acompañamiento de desarrolladores junior mediante code reviews, mentoring técnico y promoción de buenas prácticas de ingeniería.",
-      "Full Stack & UX/UI: Diseño e implementación de APIs REST con .NET y desarrollo de interfaces frontend pixel-perfect a partir de prototipos en Figma, combinando requisitos funcionales, experiencia de usuario y decisiones de arquitectura.",
-      "Datos, almacenamiento y rendimiento: Diseño y optimización de soluciones sobre SQL y ClickHouse para trabajar con grandes volúmenes de datos, utilizando Redis como capa de caché y S3 para almacenamiento.",
-      "Seguridad, Cloud & DevOps: Implementación de sistemas de autenticación y autorización, protección de datos sensibles y despliegues containerizados en producción mediante Docker y AWS.",
-      "Cliente y producto: Colaboración directa con clientes y stakeholders en la definición, planificación y evolución de proyectos, traduciendo necesidades de negocio en soluciones técnicas y acompañando su implementación."
+        "Desarrollo de plataformas web escalables para la gestión de campeonatos, resultados en tiempo real y diferido y servicios automatizados para clientes de primer nivel del sector deportivo.",
+        "Liderazgo técnico y ownership end-to-end: Responsable de la definición técnica, arquitectura, desarrollo y evolución de plataformas bajo metodología Scrum, actuando como principal referente técnico del proyecto.",
+        "Mentoría y liderazgo de equipo: Acompañamiento de desarrolladores junior mediante code reviews, mentoring técnico y promoción de buenas prácticas de ingeniería.",
+        "Full Stack & UX/UI: Diseño e implementación de APIs REST con .NET y desarrollo de interfaces frontend pixel-perfect a partir de prototipos en Figma, combinando requisitos funcionales, experiencia de usuario y decisiones de arquitectura.",
+        "Datos, almacenamiento y rendimiento: Diseño y optimización de soluciones sobre SQL y ClickHouse para trabajar con grandes volúmenes de datos, utilizando Redis como capa de caché y S3 para almacenamiento.",
+        "Seguridad, Cloud & DevOps: Implementación de sistemas de autenticación y autorización, protección de datos sensibles y despliegues containerizados en producción mediante Docker y AWS.",
+        "Cliente y producto: Colaboración directa con clientes y stakeholders en la definición, planificación y evolución de proyectos, traduciendo necesidades de negocio en soluciones técnicas y acompañando su implementación."
+      ],
+      highlightsEn: [
+        "Development of scalable web platforms for championship management, real-time and delayed results and automated services for top-tier sports clients.",
+        "Technical leadership & ownership end-to-end: Responsible for technical definition, architecture, development and platform evolution under Scrum methodology, serving as the main technical reference.",
+        "Mentorship & team leadership: Guiding junior developers through code reviews, technical mentoring and promoting engineering best practices.",
+        "Full Stack & UX/UI: Design and implementation of REST APIs with .NET and pixel-perfect frontend interface development from Figma prototypes, combining functional requirements, user experience and architecture decisions.",
+        "Data, storage & performance: Design and optimization of solutions on SQL and ClickHouse for large data volumes, using Redis as caching layer and S3 for storage.",
+        "Security, Cloud & DevOps: Implementation of authentication and authorization systems, sensitive data protection and containerized production deployments via Docker and AWS.",
+        "Client & product: Direct collaboration with clients and stakeholders in project definition, planning and evolution, translating business needs into technical solutions and supporting implementation."
       ],
     },
     {
@@ -31,8 +43,14 @@ export const portfolioData = {
       role: "Desarrollo web",
       period: "2024",
       location: "Madrid, España",
+      roleEn: "Web Development",
+      periodEn: "2024",
+      locationEn: "Madrid, Spain",
       highlights: [
         "Desarrollo de sitios web personalizados en WordPress con optimización SEO.",
+      ],
+      highlightsEn: [
+        "Development of custom WordPress websites with SEO optimization.",
       ],
     },
     {
@@ -40,8 +58,14 @@ export const portfolioData = {
       role: "Diseño gráfico y desarrollo web",
       period: "2022 - 2023",
       location: "Madrid, España",
+      roleEn: "Graphic Design & Web Development",
+      periodEn: "2022 - 2023",
+      locationEn: "Madrid, Spain",
       highlights: [
         "Perfil híbrido: materiales 2D/3D, desarrollo frontend para eventos y coordinación con clientes.",
+      ],
+      highlightsEn: [
+        "Hybrid role: 2D/3D materials, frontend development for events and client coordination.",
       ],
     },
   ],
