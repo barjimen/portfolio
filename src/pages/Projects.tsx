@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiArrowRight, FiChevronLeft, FiChevronRight } from "react-icons/fi";
@@ -6,22 +6,35 @@ import { useTranslation } from "react-i18next";
 import { projects } from "../data/projects";
 import styles from "./Projects.module.css";
 
-const ITEMS_PER_VIEW = 3;
-
 type TabType = "todos" | "trabajo" | "personal";
+
+const getItemsPerView = () => {
+  if (typeof window === "undefined") return 3;
+  if (window.innerWidth <= 768) return 1;
+  if (window.innerWidth <= 1024) return 2;
+  return 3;
+};
 
 export const Projects = () => {
   const { t, i18n } = useTranslation();
   const isEn = i18n.language === "en";
   const [activeTab, setActiveTab] = useState<TabType>("todos");
   const [current, setCurrent] = useState(0);
+  const [itemsPerView, setItemsPerView] = useState(getItemsPerView);
+
+  useEffect(() => {
+    const handleResize = () => setItemsPerView(getItemsPerView());
+    window.addEventListener("resize", handleResize);
+    handleResize();
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const filteredProjects =
     activeTab === "todos"
       ? projects
       : projects.filter((p) => p.type === activeTab);
 
-  const maxIndex = Math.max(0, filteredProjects.length - ITEMS_PER_VIEW);
+  const maxIndex = Math.max(0, filteredProjects.length - itemsPerView);
 
   const prev = () => setCurrent((c) => (c <= 0 ? maxIndex : c - 1));
   const next = () => setCurrent((c) => (c >= maxIndex ? 0 : c + 1));
@@ -80,7 +93,7 @@ export const Projects = () => {
           <div
             className={styles.carouselTrack}
             style={{
-              transform: `translateX(-${current * (100 / ITEMS_PER_VIEW)}%)`,
+              transform: `translateX(-${current * (100 / itemsPerView)}%)`,
             }}
           >
             {filteredProjects.map((project) => {
@@ -123,7 +136,7 @@ export const Projects = () => {
             })}
           </div>
 
-          {filteredProjects.length > ITEMS_PER_VIEW && (
+          {filteredProjects.length > itemsPerView && (
             <div className={styles.controls}>
               <button
                 className={styles.controlBtn}
