@@ -64,17 +64,17 @@ export const projects: Project[] = [
     subtitle: "Datos deportivos en vivo para la FETRI",
     description:
       "Sistema de procesamiento y visualización de resultados deportivos en tiempo real y diferido, integrado con múltiples fuentes de datos para la Federación Española de Triatlón.",
-    image: "/projects/fetri/home.png",
+    image: "./projects/fetri/home.png",
     images: [
-      "/projects/fetri/home.png",
-      "/projects/fetri/calendar-home.png",
-      "/projects/fetri/filters.png",
-      "/projects/fetri/champ.png",
-      "/projects/fetri/results-champ.png",
-      "/projects/fetri/results-champ2.png",
-      "/projects/fetri/results-champ3.png",
-      "/projects/fetri/modal-bio.png",
-      "/projects/fetri/bio-completa.png",
+      "./projects/fetri/home.png",
+      "./projects/fetri/calendar-home.png",
+      "./projects/fetri/filters.png",
+      "./projects/fetri/champ.png",
+      "./projects/fetri/results-champ.png",
+      "./projects/fetri/results-champ2.png",
+      "./projects/fetri/results-champ3.png",
+      "./projects/fetri/modal-bio.png",
+      "./projects/fetri/bio-completa.png",
     ],
     tags: [".NET", "Blazor", "SQL", "WebSocket", "World Thriatlon API"],
     featured: true,
@@ -114,9 +114,9 @@ export const projects: Project[] = [
     subtitle: "Gestión total de los datos deportivos de una organización",
     description:
       "Herramienta completa para la gestión de eventos deportivos, desde la logística hasta la experiencia del espectador, subida de resultados, rankings, ligas, deportistas y más.",
-    image: "/projects/crm/home.png",
+    image: "./projects/crm/home.png",
     images: [
-      "/projects/crm/home.png"
+      "./projects/crm/home.png"
     ],
     tags: [".NET", "Blazor", "AWS", "S3"],
     featured: true,

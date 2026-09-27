@@ -68,11 +68,11 @@ export const portfolioData = {
     },
   ],
   certifications: [
-    { name: "AWS Developer Associate", issuer: "Amazon", image: "/certs/aws_dev.png" },
-    { name: "Azure Developer Associate", issuer: "Microsoft", image: "/certs/associate.svg" },
-    { name: "Power Platform Developer Associate", issuer: "Microsoft", image: "/certs/ppdev.png" },
-    { name: "Diseño UX de Google", issuer: "Google y Coursera", image: "/certs/ux_cert.png" },
-    { name: "Gestión de proyectos de Google", issuer: "Google y Coursera", image: "/certs/project.png" },
+    { name: "AWS Developer Associate", issuer: "Amazon", image: "./certs/aws_dev.png" },
+    { name: "Azure Developer Associate", issuer: "Microsoft", image: "./certs/associate.svg" },
+    { name: "Power Platform Developer Associate", issuer: "Microsoft", image: "./certs/ppdev.png" },
+    { name: "Diseño UX de Google", issuer: "Google y Coursera", image: "./certs/ux_cert.png" },
+    { name: "Gestión de proyectos de Google", issuer: "Google y Coursera", image: "./certs/project.png" },
   ],
   skills: [
     "C#",
