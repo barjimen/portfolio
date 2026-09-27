@@ -173,7 +173,7 @@
 
   .navTab {
     padding: 8px 16px;
-    font-size: 0.85rem;
+    font-size: 12px;
   }
 
   .navTabActive::after {
@@ -182,22 +182,22 @@
   }
 
   .navRight {
-    padding: 6px 12px 0;
+    padding: 6px 6px 0;
     gap: 8px;
     min-height: 48px;
     border-radius: 8px 8px 0 0;
   }
 
   .socialIcon {
-    width: 32px;
-    height: 32px;
-    font-size: 0.9rem;
+    width: 25px;
+    height: 25px;
+    font-size: 13px;
   }
 
   .langBtn {
-    width: 32px;
-    height: 32px;
-    font-size: 0.7rem;
+    width: 25px;
+    height: 25px;
+    font-size: 10px;
   }
 
   .main {

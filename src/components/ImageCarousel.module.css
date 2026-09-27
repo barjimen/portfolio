@@ -187,9 +187,33 @@
 }
 
 @media (max-width: 768px) {
+  .carousel {
+    margin-bottom: 24px;
+    border-radius: var(--radius-md);
+  }
+
+  .mainImageWrapper {
+    aspect-ratio: 4 / 3;
+  }
+
   .navBtn {
-    width: 36px;
-    height: 36px;
+    width: 32px;
+    height: 32px;
+  }
+
+  .navBtnPrev {
+    left: 8px;
+  }
+
+  .navBtnNext {
+    right: 8px;
+  }
+
+  .counter {
+    bottom: 8px;
+    right: 8px;
+    font-size: 0.7rem;
+    padding: 3px 8px;
   }
 
   .thumbnails {
@@ -198,24 +222,36 @@
   }
 
   .thumbnail {
-    width: 64px;
-    height: 44px;
-  }
-
-  .lightbox {
-    padding: 20px;
-  }
-
-  .lightboxNav {
-    width: 40px;
+    width: 56px;
     height: 40px;
   }
 
+  .lightbox {
+    padding: 16px;
+  }
+
+  .lightboxNav {
+    width: 36px;
+    height: 36px;
+  }
+
+  .lightboxClose {
+    width: 36px;
+    height: 36px;
+    top: 12px;
+    right: 12px;
+  }
+
   .lightboxPrev {
-    left: 12px;
+    left: 8px;
   }
 
   .lightboxNext {
-    right: 12px;
+    right: 8px;
+  }
+
+  .lightboxImage {
+    max-width: 100vw;
+    max-height: 80vh;
   }
 }

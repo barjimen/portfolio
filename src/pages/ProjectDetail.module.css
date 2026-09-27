@@ -2,6 +2,7 @@
   max-width: 1800px;
   margin: 0 auto;
   padding: 60px 48px;
+  overflow: hidden;
 }
 
 .back {
