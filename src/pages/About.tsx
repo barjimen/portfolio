@@ -13,6 +13,7 @@ const skillCategories = [
   { title: "Cloud & DevOps", items: ["Docker", "AWS", "Azure"] },
   { title: "Herramientas", items: ["Git", "Figma", "WordPress", "Power Platform"] },
   { title: "Metodologías", items: ["Scrum", "Kanban", "Prototipado y wireframing"] },
+  { title: "Soft Skills", items: ["Liderazgo técnico", "Mentoría de juniors", "Aprendizaje rápido", "Comunicación con clientes", "Trabajo en equipo", "Resolución de problemas", "Adaptabilidad", "Organización"] },
 ];
 
 export const About = () => {

@@ -7,9 +7,10 @@ import { ImageCarousel } from "../components/ImageCarousel";
 import styles from "./ProjectDetail.module.css";
 
 export const ProjectDetail = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const { id } = useParams();
   const project = projects.find((p) => p.id === id);
+  const isEn = i18n.language === "en";
 
   if (!project) {
     return (
@@ -25,6 +26,10 @@ export const ProjectDetail = () => {
   const projectImages = project.images?.length
     ? project.images
     : [project.image];
+
+  const title = isEn && project.titleEn ? project.titleEn : project.title;
+  const subtitle = isEn && project.subtitleEn ? project.subtitleEn : project.subtitle;
+  const description = isEn && project.descriptionEn ? project.descriptionEn : project.description;
 
   return (
     <div className={styles.detail}>
@@ -45,9 +50,9 @@ export const ProjectDetail = () => {
             <span key={tag} className={styles.tag}>{tag}</span>
           ))}
         </div>
-        <h1 className={styles.title}>{project.title}</h1>
-        <p className={styles.subtitle}>{project.subtitle}</p>
-        <p className={styles.description}>{project.description}</p>
+        <h1 className={styles.title}>{title}</h1>
+        <p className={styles.subtitle}>{subtitle}</p>
+        <p className={styles.description}>{description}</p>
 
         {project.url && (
           <a
@@ -63,25 +68,29 @@ export const ProjectDetail = () => {
 
         <div className={styles.mainLayout}>
           <div className={styles.leftCol}>
-            <ImageCarousel images={projectImages} alt={project.title} />
+            <ImageCarousel images={projectImages} alt={title} />
           </div>
 
           <div className={styles.rightCol}>
             <div className={styles.sections}>
-              {project.sections.map((section, i) => (
-                <motion.section
-                  key={section.id}
-                  id={section.id}
-                  className={styles.section}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-100px" }}
-                  transition={{ duration: 0.5, delay: i * 0.05 }}
-                >
-                  <h2 className={styles.sectionTitle}>{section.title}</h2>
-                  <p className={styles.sectionContent}>{section.content}</p>
-                </motion.section>
-              ))}
+              {project.sections.map((section, i) => {
+                const sTitle = isEn && section.titleEn ? section.titleEn : section.title;
+                const sContent = isEn && section.contentEn ? section.contentEn : section.content;
+                return (
+                  <motion.section
+                    key={section.id + i}
+                    id={section.id}
+                    className={styles.section}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.5, delay: i * 0.05 }}
+                  >
+                    <h2 className={styles.sectionTitle}>{sTitle}</h2>
+                    <p className={styles.sectionContent}>{sContent}</p>
+                  </motion.section>
+                );
+              })}
             </div>
           </div>
         </div>

@@ -2,6 +2,8 @@ export interface ProjectSection {
   id: string;
   title: string;
   content: string;
+  titleEn?: string;
+  contentEn?: string;
 }
 
 export interface Project {
@@ -9,6 +11,9 @@ export interface Project {
   title: string;
   subtitle: string;
   description: string;
+  titleEn?: string;
+  subtitleEn?: string;
+  descriptionEn?: string;
   image: string;
   images?: string[];
   tags: string[];
@@ -26,6 +31,10 @@ export const projects: Project[] = [
     subtitle: "Resultados y rankings en tiempo real",
     description:
       "Plataforma web escalable para la gestión de resultados deportivos de alto nivel. Realizada en Conersys Sports Solutions para RFEA.",
+    titleEn: "RFEA - Real-time Results Page",
+    subtitleEn: "Real-time results and rankings",
+    descriptionEn:
+      "Scalable web platform for high-level sports results management. Built at Conersys Sports Solutions for RFEA.",
     image: "./projects/rfea/home.png",
     images: [
       "./projects/rfea/home.png",
@@ -49,12 +58,18 @@ export const projects: Project[] = [
         title: "Visión general",
         content:
           "Plataforma web desarrollada por Conersys Sports Solutions para RFEA, diseñada con los colores característico de la entidad basandose en su nuevo logotipo. La web permite al usuario visualizar todos los resultados de los campeonatos tanto en tiempo real como en diferido, visualizar el ranking nacional y otros datos de interés.",
+        titleEn: "Overview",
+        contentEn:
+          "Web platform developed by Conersys Sports Solutions for RFEA, designed with the entity's characteristic colors based on its new logo. The website allows users to view all championship results in real-time and delayed mode, view the national ranking and other relevant data.",
       },
       {
         id: "architecture",
         title: "Arquitectura",
         content:
           "Aplicación WASM con frontend en .NET Blazor que consume datos en formato JSON optimizados para lectura rápida. Comunicación en tiempo real mediante SignalR para detectar cambios instantáneos. Caché para optimizar tiempos de respuesta. Un backend separado genera automáticamente las biografías de los atletas cada 6 horas, recuperando los datos desde ClickHouse y almacenándolos en JSON para acceso rápido.",
+        titleEn: "Architecture",
+        contentEn:
+          "WASM application with .NET Blazor frontend consuming data in fast-read JSON format. Real-time communication via SignalR for instant change detection. Caching for optimized response times. A separate backend automatically generates athlete biographies every 6 hours, fetching data from ClickHouse and storing it in JSON for quick access.",
       },
     ],
   },
@@ -262,17 +277,19 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: "task-tracker",
-    title: "Task Tracker",
-    subtitle: "Gestión de tareas de trabajo",
+    id: "paws-and-notes",
+    title: "Paws & Notes",
+    subtitle: "Diario personal con Pomodoro y sincronización a Notion",
     description:
-      "App de escritorio para el seguimiento diario de tareas, reuniones y otros elementos de trabajo.",
-    image: "https://placehold.co/800x500/222023/bc96e6?text=Task+Tracker",
+      "App de escritorio para el seguimiento personal del día a día: diario con estadísticas, Pomodoro configurable, captura rápida global y envío automático a Notion.",
+    image: "https://placehold.co/800x500/140e12/c8a2d4?text=Paws+%26+Notes",
     images: [
-      "https://placehold.co/800x500/222023/bc96e6?text=Task+Tracker",
-      "https://placehold.co/800x500/222023/FFD166?text=Dashboard",
+      "https://placehold.co/800x500/140e12/c8a2d4?text=Paws+%26+Notes",
+      "https://placehold.co/800x500/140e12/e88aae?text=Diario",
+      "https://placehold.co/800x500/140e12/9ee0b0?text=Pomodoro",
+      "https://placehold.co/800x500/140e12/7ab8e0?text=Temas",
     ],
-    tags: [".NET", "WPF", "SQLite"],
+    tags: [".NET 9", "WPF", "Blazor Hybrid", "Notion API"],
     featured: false,
     type: "personal",
     sections: [
@@ -280,13 +297,19 @@ export const projects: Project[] = [
         id: "overview",
         title: "Visión general",
         content:
-          "Aplicación de escritorio diseñada para organizar y dar seguimiento al día a día laboral: tareas pendientes, reuniones, recordatorios y otros elementos relevantes.",
+          "Aplicación de escritorio que vive en la bandeja del sistema y funciona en segundo plano. Registra la jornada diary con calendario visual, estadísticas semanales/mensuales de horas trabajadas y energía, y ofrece un Pomodoro con detección de inactividad. Todo se sincroniza con una base de datos de Notion y se puede capturar notas rápidamente desde cualquier lugar con Ctrl+Shift+Space.",
       },
       {
         id: "features",
         title: "Funcionalidades",
         content:
-          "Gestión de tareas con estados y prioridades. Calendarización de reuniones. Recordatorios y notificaciones. Vista diaria/semanal. Almacenamiento local con SQLite.",
+          "Diario con tipos de día (trabajo/libre/vacaciones/baja), horario, resumen, logros y nivel de energía. Calendario mensual con colores por tipo. Estadísticas por semana/mes/todo con gráfico de horas. Pomodoro con presets personalizados y extensión de +5 min. Captura rápida global. 3 temas de colores con estética de tecla mecánica. Detección de inactividad que pausa el Pomodoro. Rachas de días completados. Resumen semanal automático a Notion.",
+      },
+      {
+        id: "tech",
+        title: "Tecnología",
+        content:
+          "WPF + Blazor Hybrid sobre .NET 9. Persistencia local en JSON (sin base de datos). Integración con la API REST de Notion. Detección de inactividad del sistema vía P/Invoke (GetLastInputInfo). Atajo global registrado con RegisterHotKey. Estilos CSS con variables CSS para los 3 temas y scrollbar personalizado.",
       },
     ],
   },
