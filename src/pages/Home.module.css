@@ -200,10 +200,6 @@
     padding: 60px 40px;
   }
 
-  .projectsSide {
-    order: -1;
-  }
-
   .projectsFade {
     display: none;
   }
@@ -215,16 +211,26 @@
 
 @media (max-width: 768px) {
   .home {
-    padding: 40px 20px;
+    padding: 32px 16px;
+    gap: 32px;
+  }
+
+  .greeting {
+    font-size: 0.85rem;
   }
 
   .name {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     letter-spacing: -1px;
   }
 
   .role {
-    font-size: 1.1rem;
+    font-size: 1rem;
+  }
+
+  .tagline {
+    font-size: 0.95rem;
+    max-width: 100%;
   }
 
   .heroActions {
@@ -233,14 +239,25 @@
 
   .btn {
     justify-content: center;
+    padding: 12px 24px;
   }
 
   .projectCard {
     flex-direction: column;
+    padding: 16px;
+    gap: 12px;
   }
 
   .projectThumb {
     width: 100%;
-    height: 160px;
+    height: 140px;
+  }
+
+  .projectTitle {
+    font-size: 1rem;
+  }
+
+  .projectDesc {
+    font-size: 0.8rem;
   }
 }

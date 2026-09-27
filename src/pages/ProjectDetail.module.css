@@ -162,18 +162,43 @@
 
 @media (max-width: 768px) {
   .detail {
-    padding: 32px 20px;
+    padding: 24px 16px;
   }
 
   .title {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
+    letter-spacing: -1px;
+  }
+
+  .subtitle {
+    font-size: 0.95rem;
+  }
+
+  .description {
+    font-size: 0.9rem;
+  }
+
+  .visitBtn {
+    padding: 8px 16px;
+    font-size: 0.85rem;
   }
 
   .mainLayout {
     grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .section {
+    padding-bottom: 24px;
   }
 
   .sectionTitle {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    padding-left: 12px;
+  }
+
+  .sectionContent {
+    font-size: 0.9rem;
+    line-height: 1.7;
   }
 }

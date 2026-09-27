@@ -9,29 +9,30 @@
 .navbar {
   display: flex;
   align-items: flex-end;
-  padding: 0 0 0;
+  padding: 0;
   gap: 0;
   position: relative;
   z-index: 10;
-  margin: 0 0 0 0;
 }
 
-.logoTab {
+.navLeft {
   font-family: var(--font-mono);
   font-size: 1.1rem;
   font-weight: 700;
+  padding: 12px 28px 0;
+  background: #f5f0e8;
   color: #222023;
+  border-radius: 12px 12px 0 0;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
+  border: 1px solid rgba(0, 0, 0, 0.06);
   border-bottom: none;
   position: relative;
   z-index: 2;
   transition: all 0.2s ease;
-}
-
-.logoTab:hover {
-  color: var(--color-accent-dark);
+  gap: 15px;
+  min-height: 53px;
 }
 
 .navCenter {
@@ -57,6 +58,7 @@
   align-items: center;
   position: relative;
   transition: color 0.2s ease;
+  white-space: nowrap;
 }
 
 .navTab:hover {
@@ -80,69 +82,49 @@
 
 .navRight {
   font-family: var(--font-mono);
-    font-size: 1.1rem;
-    font-weight: 700;
-    padding: 12px 28px 0;
-    background: #f5f0e8;
-    color: #222023;
-    border-radius: 12px 12px 0 0;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    border: 1px solid rgba(0, 0, 0, 0.06);
-    border-bottom: none;
-    position: relative;
-    z-index: 2;
-    transition: all 0.2s ease;
-    gap: 15px;
-}
-
-.navLeft{
-  font-family: var(--font-mono);
-    font-size: 1.1rem;
-    font-weight: 700;
-    padding: 12px 28px 0;
-    background: #f5f0e8;
-    color: #222023;
-    border-radius: 12px 12px 0 0;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    border: 1px solid rgba(0, 0, 0, 0.06);
-    border-bottom: none;
-    position: relative;
-    z-index: 2;
-    transition: all 0.2s ease;
-    gap: 15px;
-    min-height: 53px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 8px 20px 0;
+  background: #f5f0e8;
+  color: #222023;
+  border-radius: 12px 12px 0 0;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-bottom: none;
+  position: relative;
+  z-index: 2;
+  transition: all 0.2s ease;
+  gap: 10px;
+  min-height: 53px;
 }
 
 .socialIcon {
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgb(9 9 9 / 50%);
-    border-radius: 10px;
-    color: #777;
-  font-size: 1.1rem;
+  border-radius: 10px;
+  color: #777;
+  font-size: 1rem;
   transition: all 0.2s ease;
   text-decoration: none;
 }
 
 .socialIcon:hover {
   background: #9a6fd4;
-    border-color: var(--color-accent-dark);
-    color: rgba(255, 255, 255, 0.8);
-    color: #fff;
-    transform: translateY(-2px);
+  border-color: var(--color-accent-dark);
+  color: #fff;
+  transform: translateY(-2px);
 }
 
 .langBtn {
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -151,7 +133,7 @@
   border-radius: 10px;
   color: #777;
   font-family: var(--font-mono);
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 700;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -167,32 +149,58 @@
 .main {
   flex: 1;
   background: #f5f0e8;
-  border-radius: 0 0px 12px 12px;
+  border-radius: 0 0 12px 12px;
   min-height: calc(100vh - 100px);
   overflow: hidden;
 }
 
 @media (max-width: 768px) {
   .layout {
-    padding: 12px;
+    padding: 8px 10px 10px;
   }
 
   .navbar {
-    margin: 0 12px;
-    flex-wrap: wrap;
+    justify-content: center;
   }
 
-  .logoTab {
-    padding: 10px 20px;
-    font-size: 1rem;
+  .navLeft {
+    display: none;
+  }
+
+  .navCenter {
+    min-height: 48px;
   }
 
   .navTab {
-    padding: 10px 16px;
+    padding: 8px 16px;
     font-size: 0.85rem;
   }
 
+  .navTabActive::after {
+    left: 16px;
+    right: 16px;
+  }
+
+  .navRight {
+    padding: 6px 12px 0;
+    gap: 8px;
+    min-height: 48px;
+    border-radius: 8px 8px 0 0;
+  }
+
+  .socialIcon {
+    width: 32px;
+    height: 32px;
+    font-size: 0.9rem;
+  }
+
+  .langBtn {
+    width: 32px;
+    height: 32px;
+    font-size: 0.7rem;
+  }
+
   .main {
-    border-radius: 0 8px 8px 8px;
+    border-radius: 0 0 8px 8px;
   }
 }
