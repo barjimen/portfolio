@@ -17,13 +17,13 @@ export const portfolioData = {
       period: "2025 - Actualidad",
       location: "Madrid, España",
       highlights: [
-        "Desarrollo y mantenimiento de plataformas web escalables para la gestión de campeonatos, resultados en tiempo real y diferido y servicios automatizados, para clientes de primer nivel del sector deportivo.",
-        "Liderazgo técnico y ownership: Lideré el desarrollo end-to-end de plataformas bajo metodología Scrum. Autoridad técnica principal y SME en arquitecturas de proyecto.",
-        "Mentoría y crecimiento de equipo: Mentorice a desarrolladores junior mediante code reviews, coaching técnico y fomento de buenas prácticas de ingeniería.",
-        "Full-Stack y UX/UI: Diseñé APIs REST en .NET e implementé interfaces frontend pixel-perfect directamente desde prototipos en Figma, adaptando arquitecturas según necesidades del proyecto.",
-        "Datos, storage y rendimiento: Gestión de bases de datos SQL y ClickHouse con grandes volúmenes de datos, integrando caché y soluciones de almacenamiento (Redis, S3) para optimizar rendimiento.",
-        "Seguridad, Cloud y DevOps: Implementación de autenticación/autorización (tokens, protección de datos sensibles) y despliegues en producción con Docker en AWS.",
-        "Relación con cliente y ejecución: Participación activa en definición y planificación de proyectos con comunicación directa con clientes, guiando a equipos y stakeholders en la adopción del producto.",
+      "Desarrollo de plataformas web escalables para la gestión de campeonatos, resultados en tiempo real y diferido y servicios automatizados para clientes de primer nivel del sector deportivo.",
+      "Liderazgo técnico y ownership end-to-end: Responsable de la definición técnica, arquitectura, desarrollo y evolución de plataformas bajo metodología Scrum, actuando como principal referente técnico del proyecto.",
+      "Mentoría y liderazgo de equipo: Acompañamiento de desarrolladores junior mediante code reviews, mentoring técnico y promoción de buenas prácticas de ingeniería.",
+      "Full Stack & UX/UI: Diseño e implementación de APIs REST con .NET y desarrollo de interfaces frontend pixel-perfect a partir de prototipos en Figma, combinando requisitos funcionales, experiencia de usuario y decisiones de arquitectura.",
+      "Datos, almacenamiento y rendimiento: Diseño y optimización de soluciones sobre SQL y ClickHouse para trabajar con grandes volúmenes de datos, utilizando Redis como capa de caché y S3 para almacenamiento.",
+      "Seguridad, Cloud & DevOps: Implementación de sistemas de autenticación y autorización, protección de datos sensibles y despliegues containerizados en producción mediante Docker y AWS.",
+      "Cliente y producto: Colaboración directa con clientes y stakeholders en la definición, planificación y evolución de proyectos, traduciendo necesidades de negocio en soluciones técnicas y acompañando su implementación."
       ],
     },
     {

@@ -11,7 +11,8 @@ const ITEMS_PER_VIEW = 3;
 type TabType = "todos" | "trabajo" | "personal";
 
 export const Projects = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const isEn = i18n.language === "en";
   const [activeTab, setActiveTab] = useState<TabType>("todos");
   const [current, setCurrent] = useState(0);
 
@@ -82,39 +83,44 @@ export const Projects = () => {
               transform: `translateX(-${current * (100 / ITEMS_PER_VIEW)}%)`,
             }}
           >
-            {filteredProjects.map((project) => (
-              <div key={project.id} className={styles.slide}>
-                <Link to={`/projects/${project.id}`} className={styles.card}>
-                  <div className={styles.cardImageWrapper}>
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className={styles.cardImage}
-                    />
-                  </div>
-                  <div className={styles.cardContent}>
-                    <div className={styles.cardTags}>
-                      {project.company && (
-                        <span className={styles.companyTag}>
-                          {project.company}
-                        </span>
-                      )}
-                      {project.tags.slice(0, 3).map((tag) => (
-                        <span key={tag} className={styles.cardTag}>
-                          {tag}
-                        </span>
-                      ))}
+            {filteredProjects.map((project) => {
+              const title = isEn && project.titleEn ? project.titleEn : project.title;
+              const subtitle = isEn && project.subtitleEn ? project.subtitleEn : project.subtitle;
+              const description = isEn && project.descriptionEn ? project.descriptionEn : project.description;
+              return (
+                <div key={project.id} className={styles.slide}>
+                  <Link to={`/projects/${project.id}`} className={styles.card}>
+                    <div className={styles.cardImageWrapper}>
+                      <img
+                        src={project.image}
+                        alt={title}
+                        className={styles.cardImage}
+                      />
                     </div>
-                    <h3 className={styles.cardTitle}>{project.title}</h3>
-                    <p className={styles.cardSubtitle}>{project.subtitle}</p>
-                    <p className={styles.cardDesc}>{project.description}</p>
-                    <span className={styles.cardCta}>
-                      {t("projects.viewProject")} <FiArrowRight size={14} />
-                    </span>
-                  </div>
-                </Link>
-              </div>
-            ))}
+                    <div className={styles.cardContent}>
+                      <div className={styles.cardTags}>
+                        {project.company && (
+                          <span className={styles.companyTag}>
+                            {project.company}
+                          </span>
+                        )}
+                        {project.tags.slice(0, 3).map((tag) => (
+                          <span key={tag} className={styles.cardTag}>
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                      <h3 className={styles.cardTitle}>{title}</h3>
+                      <p className={styles.cardSubtitle}>{subtitle}</p>
+                      <p className={styles.cardDesc}>{description}</p>
+                      <span className={styles.cardCta}>
+                        {t("projects.viewProject")} <FiArrowRight size={14} />
+                      </span>
+                    </div>
+                  </Link>
+                </div>
+              );
+            })}
           </div>
 
           {filteredProjects.length > ITEMS_PER_VIEW && (

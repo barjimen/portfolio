@@ -6,8 +6,8 @@
   },
   "home": {
     "greeting": "// Hola, soy",
-    "role": "Full Stack Developer centrada en Frontend",
-    "tagline": "Desarrolladora Full Stack con foco en frontend. Experiencia liderando interfaces con React, Vue.js y Angular, conectando con backends en .NET y APIs REST.",
+    "role": "Full Stack Developer · Frontend & UX · Technical Leadership",
+    "tagline": "Full Stack Developer especializada en frontend y experiencia de usuario, con foco en desarrollo end-to-end y liderazgo técnico. Experiencia construyendo y escalando plataformas de alto volumen con .NET, Blazor, Redis, ClickHouse y AWS, desde la arquitectura y el desarrollo hasta el despliegue y la evolución del producto.",
     "knowMore": "Conocer más",
     "viewProjects": "Ver proyectos",
     "featuredProjects": "Proyectos destacados",

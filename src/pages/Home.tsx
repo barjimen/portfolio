@@ -9,7 +9,8 @@ import styles from "./Home.module.css";
 const featuredProjects = projects.filter((p) => p.featured);
 
 export const Home = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const isEn = i18n.language === "en";
   const { personal } = portfolioData;
 
   return (
@@ -79,36 +80,40 @@ export const Home = () => {
       >
         <div className={styles.projectsFade} />
         <div className={styles.projectsScroll}>
-          {featuredProjects.map((project, index) => (
-            <motion.div
-              key={project.id}
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.5 + index * 0.1 }}
-            >
-              <Link
-                to={`/projects/${project.id}`}
-                className={styles.projectCard}
+          {featuredProjects.map((project, index) => {
+            const title = isEn && project.titleEn ? project.titleEn : project.title;
+            const description = isEn && project.descriptionEn ? project.descriptionEn : project.description;
+            return (
+              <motion.div
+                key={project.id}
+                initial={{ opacity: 0, x: 30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.5 + index * 0.1 }}
               >
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className={styles.projectThumb}
-                />
-                <div className={styles.projectInfo}>
-                  <div className={styles.projectTags}>
-                    {project.tags.slice(0, 3).map((tag) => (
-                      <span key={tag} className={styles.projectTag}>
-                        {tag}
-                      </span>
-                    ))}
+                <Link
+                  to={`/projects/${project.id}`}
+                  className={styles.projectCard}
+                >
+                  <img
+                    src={project.image}
+                    alt={title}
+                    className={styles.projectThumb}
+                  />
+                  <div className={styles.projectInfo}>
+                    <div className={styles.projectTags}>
+                      {project.tags.slice(0, 3).map((tag) => (
+                        <span key={tag} className={styles.projectTag}>
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    <h3 className={styles.projectTitle}>{title}</h3>
+                    <p className={styles.projectDesc}>{description}</p>
                   </div>
-                  <h3 className={styles.projectTitle}>{project.title}</h3>
-                  <p className={styles.projectDesc}>{project.description}</p>
-                </div>
-              </Link>
-            </motion.div>
-          ))}
+                </Link>
+              </motion.div>
+            );
+          })}
 
           <Link to="/projects" className={styles.viewAll}>
             {t("home.viewAll")} <FiArrowRight size={14} />
