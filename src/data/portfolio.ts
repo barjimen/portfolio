@@ -1,0 +1,96 @@
+export const portfolioData = {
+  personal: {
+    name: "Bárbara Jiménez",
+    role: "Full Stack Developer centrada en Frontend",
+    email: "barbara.jimenez.aguilar@hotmail.com",
+    github: "https://github.com/barjimen",
+    linkedin: "https://www.linkedin.com/in/barbarajimenezaguilar",
+    phone: "664401978",
+    tagline: "Full Stack Developer con React, .NET y Vue.js, centrada en el desarrollo frontend",
+    summary:
+      "Desarrolladora Full Stack especializada en frontend y experiencia de usuario. Experiencia liderando interfaces con React, Vue.js y Angular, conectando con backends en .NET y APIs REST. Especialista en diseño UX/UI end-to-end desde Figma hasta producción, con despliegue en Docker y entornos Cloud.",
+  },
+  experience: [
+    {
+      company: "Conersys Sports Solutions S.L.",
+      role: "Full Stack Developer (Mid)",
+      period: "2025 - Actualidad",
+      location: "Madrid, España",
+      highlights: [
+        "Desarrollo y mantenimiento de plataformas web escalables para la gestión de campeonatos, resultados en tiempo real y diferido y servicios automatizados, para clientes de primer nivel del sector deportivo.",
+        "Liderazgo técnico y ownership: Lideré el desarrollo end-to-end de plataformas bajo metodología Scrum. Autoridad técnica principal y SME en arquitecturas de proyecto.",
+        "Mentoría y crecimiento de equipo: Mentorice a desarrolladores junior mediante code reviews, coaching técnico y fomento de buenas prácticas de ingeniería.",
+        "Full-Stack y UX/UI: Diseñé APIs REST en .NET e implementé interfaces frontend pixel-perfect directamente desde prototipos en Figma, adaptando arquitecturas según necesidades del proyecto.",
+        "Datos, storage y rendimiento: Gestión de bases de datos SQL y ClickHouse con grandes volúmenes de datos, integrando caché y soluciones de almacenamiento (Redis, S3) para optimizar rendimiento.",
+        "Seguridad, Cloud y DevOps: Implementación de autenticación/autorización (tokens, protección de datos sensibles) y despliegues en producción con Docker en AWS.",
+        "Relación con cliente y ejecución: Participación activa en definición y planificación de proyectos con comunicación directa con clientes, guiando a equipos y stakeholders en la adopción del producto.",
+      ],
+    },
+    {
+      company: "Pipote S.L.",
+      role: "Desarrollo web",
+      period: "2024",
+      location: "Madrid, España",
+      highlights: [
+        "Desarrollo de sitios web personalizados en WordPress con optimización SEO.",
+      ],
+    },
+    {
+      company: "AV Medios",
+      role: "Diseño gráfico y desarrollo web",
+      period: "2022 - 2023",
+      location: "Madrid, España",
+      highlights: [
+        "Perfil híbrido: materiales 2D/3D, desarrollo frontend para eventos y coordinación con clientes.",
+      ],
+    },
+  ],
+  education: [
+    {
+      institution: "Tajamar Tech",
+      degree: "Máster Desarrollo Web Full Stack + MultiCloud con Azure y AWS",
+      period: "2024 - 2025",
+    },
+    {
+      institution: "42 Madrid",
+      degree: "Programación técnica",
+      period: "2022 - 2026",
+    },
+    {
+      institution: "Femxa",
+      degree: "Confección y publicación de páginas web",
+      period: "2023 - 2024",
+    },
+    {
+      institution: "Campus FP",
+      degree: "Técnico Superior Animación 3D, Videojuegos y entornos interactivos",
+      period: "2017 - 2019",
+    },
+  ],
+  certifications: [
+    { name: "AWS Developer Associate", issuer: "Amazon", image: "/certs/aws_dev.png" },
+    { name: "Azure Developer Associate", issuer: "Microsoft", image: "/certs/associate.svg" },
+    { name: "Power Platform Developer Associate", issuer: "Microsoft", image: "/certs/ppdev.png" },
+    { name: "Diseño UX de Google", issuer: "Google y Coursera", image: "/certs/ux_cert.png" },
+    { name: "Gestión de proyectos de Google", issuer: "Google y Coursera", image: "/certs/project.png" },
+  ],
+  skills: [
+    "C#",
+    ".NET",
+    "Python",
+    "TypeScript",
+    "React",
+    "Vue.js",
+    "Angular",
+    "APIs REST",
+    "SQL",
+    "ClickHouse",
+    "Docker",
+    "AWS",
+    "Azure",
+    "Redis",
+    "Figma",
+    "Git",
+    "Scrum",
+  ],
+};

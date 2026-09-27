@@ -1,0 +1,43 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre mí",
+    "projects": "Proyectos"
+  },
+  "home": {
+    "greeting": "// Hola, soy",
+    "role": "Full Stack Developer centrada en Frontend",
+    "tagline": "Desarrolladora Full Stack con foco en frontend. Experiencia liderando interfaces con React, Vue.js y Angular, conectando con backends en .NET y APIs REST.",
+    "knowMore": "Conocer más",
+    "viewProjects": "Ver proyectos",
+    "featuredProjects": "Proyectos destacados",
+    "viewAll": "Ver todos los proyectos"
+  },
+  "about": {
+    "title": "Sobre mí",
+    "subtitle": "Full Stack Developer con foco en frontend. Pasión por crear interfaces de alto nivel y experiencias digitales que marcan la diferencia. Siempre aprendiendo, siempre construyendo.",
+    "tabs": {
+      "experience": "Experiencia",
+      "education": "Formación",
+      "skills": "Stack tecnológico"
+    },
+    "certifications": "Certificaciones"
+  },
+  "projects": {
+    "title": "Proyectos",
+    "subtitle": "Una selección de los proyectos en los que he trabajado.",
+    "tabs": {
+      "all": "Todos",
+      "work": "Trabajo",
+      "personal": "Personales"
+    },
+    "viewProject": "Ver proyecto",
+    "back": "Volver a proyectos",
+    "visitWeb": "Visitar web",
+    "notFound": "Proyecto no encontrado."
+  },
+  "footer": {
+    "builtWith": "Hecho con",
+    "using": "usando"
+  }
+}

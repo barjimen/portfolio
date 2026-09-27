@@ -1,0 +1,246 @@
+.home {
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 80px 60px;
+  min-height: calc(100vh - 100px);
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.greeting {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  color: var(--color-accent-dark);
+  letter-spacing: 1px;
+}
+
+.name {
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -2px;
+  color: var(--color-text-primary);
+}
+
+.nameAccent {
+  background: linear-gradient(135deg, var(--color-accent-dark), var(--color-highlight-dark));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.role {
+  font-size: 1.3rem;
+  color: var(--color-accent-dark);
+  font-weight: 600;
+}
+
+.tagline {
+  font-size: 1.05rem;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  max-width: 480px;
+}
+
+.heroActions {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  border-radius: var(--radius-full);
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btnPrimary {
+  background: var(--color-accent-dark);
+  color: #fff;
+}
+
+.btnPrimary:hover {
+  background: var(--color-accent);
+  transform: translateY(-2px);
+}
+
+.btnGhost {
+  border: 1px solid var(--color-border-hover);
+  color: var(--color-text-secondary);
+}
+
+.btnGhost:hover {
+  border-color: var(--color-accent-dark);
+  color: var(--color-accent-dark);
+  transform: translateY(-2px);
+}
+
+.projectsSide {
+  position: relative;
+  overflow: hidden;
+}
+
+.projectsFade {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 120px;
+  background: linear-gradient(to right, transparent, var(--color-content));
+  z-index: 2;
+  pointer-events: none;
+}
+
+.projectsScroll {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-right: 140px;
+}
+
+.projectCard {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.projectCard:hover {
+  border-color: var(--color-border-hover);
+  transform: translateX(-4px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.projectThumb {
+  width: 140px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+}
+
+.projectInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.projectTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.projectTag {
+  padding: 2px 8px;
+  background: rgba(188, 150, 230, 0.12);
+  border-radius: var(--radius-full);
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--color-accent-dark);
+}
+
+.projectTitle {
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.projectDesc {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.viewAll {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  margin-top: 8px;
+  transition: color var(--transition);
+}
+
+.viewAll:hover {
+  color: var(--color-accent-dark);
+}
+
+@media (max-width: 1024px) {
+  .home {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    padding: 60px 40px;
+  }
+
+  .projectsSide {
+    order: -1;
+  }
+
+  .projectsFade {
+    display: none;
+  }
+
+  .projectsScroll {
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .home {
+    padding: 40px 20px;
+  }
+
+  .name {
+    font-size: 2.5rem;
+    letter-spacing: -1px;
+  }
+
+  .role {
+    font-size: 1.1rem;
+  }
+
+  .heroActions {
+    flex-direction: column;
+  }
+
+  .btn {
+    justify-content: center;
+  }
+
+  .projectCard {
+    flex-direction: column;
+  }
+
+  .projectThumb {
+    width: 100%;
+    height: 160px;
+  }
+}

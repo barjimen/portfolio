@@ -1,0 +1,43 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects"
+  },
+  "home": {
+    "greeting": "// Hi, I'm",
+    "role": "Full Stack Developer focused on Frontend",
+    "tagline": "Full Stack Developer focused on frontend. Experience leading interfaces with React, Vue.js and Angular, connecting with .NET backends and REST APIs.",
+    "knowMore": "Learn more",
+    "viewProjects": "View projects",
+    "featuredProjects": "Featured projects",
+    "viewAll": "View all projects"
+  },
+  "about": {
+    "title": "About me",
+    "subtitle": "Full Stack Developer focused on frontend. Passionate about creating high-end interfaces and digital experiences that make a difference. Always learning, always building.",
+    "tabs": {
+      "experience": "Experience",
+      "education": "Education",
+      "skills": "Tech Stack"
+    },
+    "certifications": "Certifications"
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "A selection of projects I've worked on.",
+    "tabs": {
+      "all": "All",
+      "work": "Work",
+      "personal": "Personal"
+    },
+    "viewProject": "View project",
+    "back": "Back to projects",
+    "visitWeb": "Visit website",
+    "notFound": "Project not found."
+  },
+  "footer": {
+    "builtWith": "Built with",
+    "using": "using"
+  }
+}
