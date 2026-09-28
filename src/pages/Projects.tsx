@@ -31,8 +31,8 @@ export const Projects = () => {
 
   const filteredProjects =
     activeTab === "todos"
-      ? projects
-      : projects.filter((p) => p.type === activeTab);
+      ? [...projects].sort((a, b) => a.order - b.order)
+      : projects.filter((p) => p.type === activeTab).sort((a, b) => a.order - b.order);
 
   const maxIndex = Math.max(0, filteredProjects.length - itemsPerView);
 
@@ -115,6 +115,11 @@ export const Projects = () => {
                         {project.company && (
                           <span className={styles.companyTag}>
                             {project.company}
+                          </span>
+                        )}
+                        {project.role && (
+                          <span className={styles.roleTag}>
+                            {isEn && project.roleEn ? project.roleEn : project.role}
                           </span>
                         )}
                         {project.tags.slice(0, 3).map((tag) => (

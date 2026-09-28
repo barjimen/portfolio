@@ -8,6 +8,7 @@ export interface ProjectSection {
 
 export interface Project {
   id: string;
+  order: number;
   title: string;
   subtitle: string;
   description: string;
@@ -20,13 +21,17 @@ export interface Project {
   featured: boolean;
   type: "personal" | "trabajo";
   company?: string;
+  role?: string;
+  roleEn?: string;
   url?: string;
+  newsUrl?: string;
   sections: ProjectSection[];
 }
 
 export const projects: Project[] = [
   {
     id: "championship-platform",
+    order: 1,
     title: "RFEA - Página de resultados en tiempo real",
     subtitle: "Resultados y rankings en tiempo real",
     description:
@@ -51,6 +56,8 @@ export const projects: Project[] = [
     featured: true,
     type: "trabajo",
     company: "Conersys Sports Solutions",
+    role: "Programadora líder y técnica",
+    roleEn: "Lead & Technical Developer",
     url: "https://www.rfealive.es",
     sections: [
       {
@@ -71,11 +78,56 @@ export const projects: Project[] = [
         contentEn:
           "WASM application with .NET Blazor frontend consuming data in fast-read JSON format. Real-time communication via SignalR for instant change detection. Caching for optimized response times. A separate backend automatically generates athlete biographies every 6 hours, fetching data from ClickHouse and storing it in JSON for quick access.",
       },
+      {
+        id: "design",
+        title: "Nueva interfaz",
+        content:
+        "La interfaz se rediseño siguiendo los colores y patrones del nuevo logo de RFEA, front-end totalmente rediseñador por mí mejorando la experiencia y mostrando una imagen moderna y atractiva de la RFEA.",
+        titleEn: "New Interface",
+        contentEn:
+          "The interface is redesigned following the colors and patterns of the new RFEA logo, front-end fully redesigned by me to improve the experience and show a modern and attractive RFEA image.",
+      },
+    ],
+  },
+  {
+    id: "paddle-worldwide",
+    order: 2,
+    title: "Rediseño Paddle Worldwide",
+    subtitle: "Rediseño visual alineado con nuevo branding",
+    description:
+      "Rediseño de la plataforma Paddle Worldwide ajustando colores y estilos para estar alineados con su nuevo logotipo e identidad visual.",
+    titleEn: "Paddle Worldwide Redesign",
+    subtitleEn: "Visual redesign aligned with new branding",
+    descriptionEn:
+      "Redesign of the Paddle Worldwide platform adjusting colors and styles to align with their new logo and visual identity.",
+    image: "./projects/icf/home2.png",
+    images: [
+      "./projects/icf/home.png",
+      "./projects/icf/home2.png",
+      "./projects/icf/results1.png",
+      "./projects/icf/results2.png",
+    ],
+    tags: [".NET", "Blazor", "CSS", "Branding"],
+    featured: true,
+    type: "trabajo",
+    company: "Conersys Sports Solutions",
+    url: "https://icf.conersyslive.es",
+    sections: [
+      {
+        id: "overview",
+        title: "Visión general",
+        content:
+          "Rediseño completo de la plataforma Paddle Worldwide para alinearlo con la nueva identidad visual de la marca. Se actualizaron colores, tipografías y estilos generales para reflejar el nuevo logotipo y dar una imagen moderna y coherente.",
+        titleEn: "Overview",
+        contentEn:
+          "Complete redesign of the Paddle Worldwide platform to align with the brand's new visual identity. Colors, typography and general styles were updated to reflect the new logo and provide a modern, cohesive image.",
+      },
     ],
   },
   {
     id: "realtime-results",
-    title: "FETRI - Sistema de Resultados",
+    order: 3,
+    title: "FETRI - Sistema de Resultados y Estadísticas",
     subtitle: "Datos deportivos en vivo para la FETRI",
     description:
       "Sistema de procesamiento y visualización de resultados deportivos en tiempo real y diferido, integrado con múltiples fuentes de datos para la Federación Española de Triatlón.",
@@ -99,6 +151,8 @@ export const projects: Project[] = [
     featured: true,
     type: "trabajo",
     company: "Conersys Sports Solutions",
+    role: "Programadora líder y técnica",
+    roleEn: "Lead & Technical Developer",
     url: "https://www.live.fetri.es",
     sections: [
       {
@@ -141,6 +195,7 @@ export const projects: Project[] = [
   },
   {
     id: "event-management",
+    order: 5,
     title: "CRM Deportivo",
     subtitle: "Gestión total de los datos deportivos de una organización",
     description:
@@ -154,9 +209,11 @@ export const projects: Project[] = [
       "./projects/crm/home.png"
     ],
     tags: [".NET", "Blazor", "AWS", "S3"],
-    featured: true,
+    featured: false,
     type: "trabajo",
     company: "Conersys Sports Solutions",
+    role: "Programadora líder y técnica",
+    roleEn: "Lead & Technical Developer",
     sections: [
       {
         id: "overview",
@@ -171,10 +228,10 @@ export const projects: Project[] = [
         id: "modules",
         title: "Módulos",
         content:
-          "Gestión de inscripciones y acreditaciones. Control de accesos. Sistema de comunicación con participantes. Generación de informes y estadísticas post-evento.",
+          "Gestión de inscripciones y acreditaciones para eventos nacionales e internacionales, generando sus propias acreditaciones distintivas con pkpass personalizado. Generación de informes y estadísticas post-evento, resultados y rankings.",
         titleEn: "Modules",
         contentEn:
-          "Registration and accreditation management. Access control. Communication system with participants. Post-event reports and statistics generation.",
+          "Registration and accreditation management for national and international events, generating custom distinctive accreditations with personalized pkpass. Post-event reports and statistics, results and rankings.",
       },
       {
         id: "integration",
@@ -188,47 +245,8 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: "sports-analytics",
-    title: "Analytics Deportivo",
-    subtitle: "Inteligencia de datos",
-    description:
-      "Dashboard de analíticas avanzadas para equipos y organizaciones deportivas, con visualizaciones interactivas y reportes automatizados.",
-    titleEn: "Sports Analytics",
-    subtitleEn: "Data Intelligence",
-    descriptionEn:
-      "Advanced analytics dashboard for sports teams and organizations, with interactive visualizations and automated reports.",
-    image: "https://placehold.co/800x500/0a0a0a/FFD166?text=Sports+Analytics",
-    images: [
-      "https://placehold.co/800x500/0a0a0a/FFD166?text=Sports+Analytics",
-      "https://placehold.co/800x500/210B2C/BC96E6?text=Charts",
-    ],
-    tags: ["Python", "React", "ClickHouse", "Docker"],
-    featured: false,
-    type: "trabajo",
-    company: "Conersys Sports Solutions",
-    sections: [
-      {
-        id: "overview",
-        title: "Visión general",
-        content:
-          "Herramienta de análisis de datos deportivos que proporciona insights accionables para entrenadores, directivos y analistas.",
-        titleEn: "Overview",
-        contentEn:
-          "Sports data analysis tool that provides actionable insights for coaches, executives and analysts.",
-      },
-      {
-        id: "visualizations",
-        title: "Visualizaciones",
-        content:
-          "Gráficos interactivos con drill-down. Mapas de calor. Líneas de tiempo comparativas. Exportación a PDF y Excel.",
-        titleEn: "Visualizations",
-        contentEn:
-          "Interactive charts with drill-down. Heat maps. Comparative timelines. PDF and Excel export.",
-      },
-    ],
-  },
-  {
     id: "paws-and-notes",
+    order: 4,
     title: "Paws & Notes",
     subtitle: "Diario personal con Pomodoro y sincronización a Notion",
     description:
@@ -285,19 +303,18 @@ export const projects: Project[] = [
   },
   {
     id: "reading-tracker",
-    title: "Reading Tracker",
+    order: 8,
+    title: "Bookly",
     subtitle: "Seguimiento de lectura",
     description:
       "Aplicación para gestionar tu vida lectora: listas de libros, reseñas y objetivos de lectura.",
-    titleEn: "Reading Tracker",
+    titleEn: "Bookly",
     subtitleEn: "Reading tracking",
     descriptionEn:
-      "App to manage your reading life: book lists, reviews and reading goals.",
-    image: "https://placehold.co/800x500/222023/BC96E6?text=Reading+Tracker",
+      "Reading tracking project developed in .NET. This app allows you to save books in lists (read, in progress, etc.), create reviews, or create reading goals.",
+    image: "./projects/bookly/home.png",
     images: [
-      "https://placehold.co/800x500/222023/BC96E6?text=Reading+Tracker",
-      "https://placehold.co/800x500/222023/FFD166?text=Book+Lists",
-      "https://placehold.co/800x500/222023/BC96E6?text=Reviews",
+      "./projects/bookly/home.png",
     ],
     tags: [".NET", "Azure", "SQL"],
     featured: false,
@@ -334,6 +351,7 @@ export const projects: Project[] = [
   },
   {
   "id": "talk-manager",
+  "order": 9,
   "title": "TechTalks Tajamar",
   "subtitle": "Votación de charlas en entornos educativos",
   "description": "App para proponer y votar temas de exposiciones en el ámbito educativo, sobretodo tecnológico. Los alumnos proponen charlas en rondas definidas por el profesor, la clase vota y el sistema selecciona automáticamente las más votadas.",
@@ -391,5 +409,139 @@ export const projects: Project[] = [
       "contentEn": "Integration of multiple libraries (FullCalendar, Chart.js, SweetAlert2) in a Vue 3 project. Design of automatic talk selection algorithm with equity prioritization. Authentication management with cookies and three differentiated roles. Communication with .NET REST API from Vue frontend. Responsive design with Bootstrap 5 and complex state management without global store."
     }
   ]
-}
+},
+{
+    id: "rfea-content",
+    order: 6,
+  title: "RFEA Data",
+  subtitle: "Ecosistema estadístico del atletismo español",
+  description:
+    "Plataforma de gestión de contenido personalizada que permite a editores crear y mantener páginas web dinámicas sin conocimientos técnicos, usando un editor visual drag-and-drop, generando contenido estadístico y análisis de datos.",
+  titleEn: "RFEA Data",
+  subtitleEn: "Spanish athletics statistics ecosystem",
+  descriptionEn:
+    "Custom content management platform that allows editors to create and maintain dynamic web pages without technical knowledge, using a visual drag-and-drop editor, generating statistical content and data analysis.",
+  image: "./projects/rfeaData/home.png",
+  images: [
+    "./projects/rfeaData/home.png",
+    "./projects/rfeaData/champs1.png",
+    "./projects/rfeaData/widget_editor.png"
+  ],
+  tags: [".NET", "Blazor", "S3", "JSON", "Drag-and-Drop"],
+  featured: false,
+  type: "trabajo",
+  company: "Conersys Sports Solutions",
+  role: "Programadora líder y técnica",
+  roleEn: "Lead & Technical Developer",
+  url: "https://www.rfealive.es/data",
+  newsUrl: "https://atletismorfea.es/federacion/communication-hub/noticias/rfeadata-el-gran-ecosistema-estadistico-del-atletismo-espanol",
+  sections: [
+    {
+      id: "overview",
+      title: "Visión general",
+      content:
+        "La Real Federación Española de Atletismo refuerza su posicionamiento como referencia internacional en gestión de datos con RFEADATA, el mayor ecosistema estadístico del atletismo español. Un proyecto que concentra décadas de información federativa y que sitúa a la RFEA entre las organizaciones con mayor riqueza histórica y documental a nivel mundial.\n\nRFEADATA nace con un objetivo claro: poner en valor el dato como elemento central del atletismo. No se trata solo de recopilar información, sino de estructurarla, contextualizarla y hacerla accesible para todo tipo de usuarios. La plataforma reúne registros históricos, evolución de marcas, trayectorias deportivas y resultados de competición.\n\nEl proyecto se articula en seis grandes áreas: Récords de España, Rankings de España de todos los tiempos, Historiales de Campeonatos de España, Historiales de Campeonatos Internacionales, Biografías de atletas y Biografías de atletas históricos. A estas funcionalidades se suma la sección ESTADÍSTICAS, junto a RÁNKINGS y CAMPEONATOS.",
+      titleEn: "Overview",
+      contentEn:
+        "The Royal Spanish Athletics Federation reinforces its positioning as an international reference in data management with RFEADATA, the largest statistical ecosystem of Spanish athletics. A project that concentrates decades of federation information and places the RFEA among the organizations with the greatest historical and documentary richness worldwide.\n\nRFEADATA was born with a clear objective: to highlight data as a central element of athletics. It's not just about collecting information, but structuring, contextualizing and making it accessible to all types of users. The platform brings together historical records, performance evolution, athletic trajectories and competition results.\n\nThe project is articulated in six major areas: Spanish Records, All-Time Spanish Rankings, Spanish Championship Histories, International Championship Histories, Athlete Biographies and Historical Athlete Biographies. The STATISTICS section complements RANKINGS and CHAMPIONSHIPS, expanding the system's reach.",
+    },
+    {
+      id: "architecture",
+      title: "Arquitectura",
+      content:
+        "Widget polimórfico con deserialización automática desde JSON. Doble vía de persistencia: borradores editables y snapshots comprimidos en S3 para publicación. Las páginas sirven como presencia web oficial en rfealive.es, combinando datos deportivos en tiempo real con contenido editorial estático.",
+      titleEn: "Architecture",
+      contentEn:
+        "Polymorphic widget system with automatic JSON deserialization. Dual persistence: editable drafts and compressed snapshots on S3 for publishing. Pages serve as the official web presence on rfealive.es, combining real-time sports data with static editorial content.",
+    },
+    {
+      id: "hemeroteca",
+      title: "Hemeroteca digital",
+      content:
+        "Módulo completo de archivo digital con colecciones padre-hijo, recomendaciones cruzadas entre documentos, filtros por categoría y autor, y un motor de renderizado que genera grids de tarjetas responsive con búsqueda en tiempo real.",
+      titleEn: "Digital newspaper archive",
+      contentEn:
+        "Complete digital archive module with parent-child collections, cross-document recommendations, filters by category and author, and a rendering engine that generates responsive card grids with real-time search.",
+    },
+    {
+      id: "sections",
+      title: "Secciones autónomas",
+      content:
+        "Récords de España, rankings históricos, historiales de campeonatos, biografías de atletas y hemeroteca digital — cada una con su propio layout y widgets independientes.",
+      titleEn: "Autonomous sections",
+      contentEn:
+        "Spanish records, historical rankings, championship histories, athlete biographies and digital archive — each with its own layout and independent widgets.",
+    },
+  ],
+},
+{
+    id: "rfea-rankings",
+    order: 7,
+  title: "Sistema de Rankings — Motor de Procesamiento Atlético",
+  subtitle: "Pipeline de datos y rankings oficiales",
+  description:
+    "Pipeline de procesamiento de datos que transforma resultados de competición en rankings oficiales del atletismo español, actualizados automáticamente cada 6 horas.",
+  titleEn: "Rankings System — Athletics Processing Engine",
+  subtitleEn: "Data pipeline and official rankings",
+  descriptionEn:
+    "Data processing pipeline that transforms competition results into official Spanish athletics rankings, automatically updated every 6 hours.",
+  image: "./projects/rfea/rankings1.png",
+  images: [
+    "./projects/rfea/rankings1.png",
+    "./projects/rfea/rankings2.png",
+  ],
+  tags: [".NET", "Blazor", "ClickHouse", "SignalR", "S3", "Salesforce API"],
+  featured: false,
+  type: "trabajo",
+  company: "Conersys Sports Solutions",
+  role: "Programadora líder y técnica",
+  roleEn: "Lead & Technical Developer",
+  sections: [
+    {
+      id: "overview",
+      title: "Visión general",
+      content:
+        "El sistema extrae datos desde Salesforce, los procesa aplicando reglas de validación atlética específicas — filtros de viento, categorías por edad, variantes de pista cubierta — y genera rankings por evento, temporada y ámbito. Los resultados se almacenan en ClickHouse y se sirven como JSON comprimido.",
+      titleEn: "Overview",
+      contentEn:
+        "The system extracts data from Salesforce, processes it applying specific athletics validation rules — wind filters, age categories, indoor track variants — and generates rankings by event, season and scope. Results are stored in ClickHouse and served as compressed JSON.",
+    },
+    {
+      id: "processing",
+      title: "Procesamiento masivo",
+      content:
+        "Miles de resultados se validan contra reglas del atletismo real (viento máximo 2.0 m/s, marcas mínimas por prueba, detección automática de Short Track) generando rankings best, all y top-10 por cada combinación de evento y temporada.",
+      titleEn: "Mass processing",
+      contentEn:
+        "Thousands of results validated against real athletics rules (maximum wind 2.0 m/s, minimum marks per event, automatic Short Track detection) generating best, all and top-10 rankings for every event/season combination.",
+    },
+    {
+      id: "sync",
+      title: "Sincronización incremental",
+      content:
+        "Servicio en segundo plano que detecta qué datos cambiaron, identifica los atletas afectados, rellena huecos de integridad y regenera solo lo necesario. Actualización en tiempo real vía SignalR.",
+      titleEn: "Incremental sync",
+      contentEn:
+        "Background service that detects which data changed, identifies affected athletes, fills integrity gaps and regenerates only what's needed. Real-time updates via SignalR.",
+    },
+    {
+      id: "storage",
+      title: "Doble almacenamiento y biografías",
+      content:
+        "Rankings en ClickHouse para consultas rápidas y en S3 comprimidos para distribución. Biografías automáticas generadas tras cada sincronización combinando datos de 8+ tablas con sistema de fallback de 3 niveles.",
+      titleEn: "Dual storage and auto-biographies",
+      contentEn:
+        "Rankings in ClickHouse for fast queries and compressed S3 for distribution. Automatic athlete profiles generated after each sync combining data from 8+ tables with a 3-level fallback system.",
+    },
+    {
+      id: "coverage",
+      title: "Cobertura completa",
+      content:
+        "Todas las disciplinas del atletismo — desde 60m lisos hasta maratón, incluyendo vallas, saltos, lanzamientos, combinadas, marcha, relevos y obstáculos — con soporte para variantes de aire libre y pista cubierta.",
+      titleEn: "Full coverage",
+      contentEn:
+        "All athletics disciplines — from 60m sprints to marathon, including hurdles, jumps, throws, combined events, race walking, relays and steeplechase — with support for outdoor and indoor variants.",
+    },
+  ],
+},
 ];

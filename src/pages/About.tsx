@@ -13,7 +13,17 @@ const skillCategories = [
   { title: "Cloud & DevOps", items: ["Docker", "AWS", "Azure"] },
   { title: "Herramientas", items: ["Git", "Figma", "WordPress", "Power Platform"] },
   { title: "Metodologías", items: ["Scrum", "Kanban", "Prototipado y wireframing"] },
-  { title: "Soft Skills", items: ["Liderazgo técnico", "Mentoría de juniors", "Aprendizaje rápido", "Comunicación con clientes", "Trabajo en equipo", "Resolución de problemas", "Adaptabilidad", "Organización"] },
+  { title: "Soft Skills", items: ["Liderazgo técnico", "Mentoría de juniors", "Aprendizaje rápido", "Comunicación con clientes", "Trabajo en equipo", "Resolución de problemas", "Adaptabilidad", "Organización"], wide: true },
+];
+
+const skillCategoriesEn = [
+  { title: "Frontend", items: ["React", "Vue.js", "Angular", "TypeScript", "HTML + CSS"] },
+  { title: "Backend", items: [".NET", "C#", "Python", "REST APIs"] },
+  { title: "Databases", items: ["SQL", "ClickHouse", "Redis"] },
+  { title: "Cloud & DevOps", items: ["Docker", "AWS", "Azure"] },
+  { title: "Tools", items: ["Git", "Figma", "WordPress", "Power Platform"] },
+  { title: "Methodologies", items: ["Scrum", "Kanban", "Prototyping & wireframing"] },
+  { title: "Soft Skills", items: ["Technical leadership", "Junior mentoring", "Fast learner", "Client communication", "Teamwork", "Problem solving", "Adaptability", "Organization"], wide: true },
 ];
 
 export const About = () => {
@@ -147,10 +157,10 @@ export const About = () => {
           {activeTab === "skills" && (
             <div className={styles.skillsContainer}>
               <div className={styles.skillCategories}>
-                {skillCategories.map((cat, i) => (
+                {(isEn ? skillCategoriesEn : skillCategories).map((cat, i) => (
                   <motion.div
                     key={cat.title}
-                    className={styles.skillCategory}
+                    className={`${styles.skillCategory} ${cat.wide ? styles.skillCategoryWide : ""}`}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: i * 0.08 }}

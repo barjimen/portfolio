@@ -46,6 +46,11 @@ export const ProjectDetail = () => {
           {project.company && (
             <span className={styles.companyTag}>{project.company}</span>
           )}
+          {project.role && (
+            <span className={styles.roleTag}>
+              {isEn && project.roleEn ? project.roleEn : project.role}
+            </span>
+          )}
           {project.tags.map((tag) => (
             <span key={tag} className={styles.tag}>{tag}</span>
           ))}
@@ -63,6 +68,18 @@ export const ProjectDetail = () => {
           >
             <FiExternalLink size={16} />
             {t("projects.visitWeb")}
+          </a>
+        )}
+
+        {project.newsUrl && (
+          <a
+            href={project.newsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.newsBtn}
+          >
+            <FiExternalLink size={16} />
+            {isEn ? "Read article" : "Leer noticia"}
           </a>
         )}
 

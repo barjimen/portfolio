@@ -305,6 +305,10 @@
   padding: 20px;
 }
 
+.skillCategoryWide {
+  grid-column: 1 / -1;
+}
+
 .skillCategoryTitle {
   font-size: 0.95rem;
   font-weight: 700;

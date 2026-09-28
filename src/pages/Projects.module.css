@@ -140,6 +140,16 @@
   color: #c0392b;
 }
 
+.roleTag {
+  padding: 3px 10px;
+  background: rgba(34, 139, 34, 0.08);
+  border: 1px solid rgba(34, 139, 34, 0.2);
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #228b22;
+}
+
 .cardTitle {
   font-size: 1.15rem;
   font-weight: 700;

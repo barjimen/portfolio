@@ -6,7 +6,7 @@ import { portfolioData } from "../data/portfolio";
 import { projects } from "../data/projects";
 import styles from "./Home.module.css";
 
-const featuredProjects = projects.filter((p) => p.featured);
+const featuredProjects = projects.filter((p) => p.featured).sort((a, b) => a.order - b.order);
 
 export const Home = () => {
   const { t, i18n } = useTranslation();
