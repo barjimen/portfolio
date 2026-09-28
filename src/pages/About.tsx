@@ -41,7 +41,7 @@ export const About = () => {
         transition={{ duration: 0.5 }}
       >
         <h1 className={styles.title}>
-          Sobre <span className={styles.titleAccent}>mí</span>
+          {t("about.titleBefore")} <span className={styles.titleAccent}>{t("about.titleAccent")}</span>
         </h1>
         <p className={styles.subtitle}>
           {t("about.subtitle")}

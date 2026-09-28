@@ -14,7 +14,8 @@
     "viewAll": "Ver todos los proyectos"
   },
   "about": {
-    "title": "Sobre mí",
+    "titleBefore": "Sobre",
+    "titleAccent": "mí",
     "subtitle": "Full Stack Developer con foco en frontend. Pasión por crear interfaces de alto nivel y experiencias digitales que marcan la diferencia. Siempre aprendiendo, siempre construyendo.",
     "tabs": {
       "experience": "Experiencia",

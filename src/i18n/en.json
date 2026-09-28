@@ -16,7 +16,8 @@
 },
 
 "about": {
-"title": "About Me",
+"titleBefore": "About",
+"titleAccent": "me",
 "subtitle": "Full Stack Developer with a focus on frontend development. Passionate about creating high-quality interfaces and digital experiences that make a difference. Always learning, always building.",
 "tabs": {
 "experience": "Experience",
