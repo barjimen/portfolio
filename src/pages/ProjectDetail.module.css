@@ -301,4 +301,13 @@
   .sectionContent {
     font-size: 0.82rem;
   }
+
+  .tags {
+    gap: 4px;
+  }
+
+  .tag, .companyTag, .roleTag {
+    font-size: 0.65rem;
+    padding: 2px 6px;
+  }
 }
